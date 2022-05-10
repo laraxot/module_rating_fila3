@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Panels;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-//--- Services --
-
-use Modules\Xot\Models\Panels\XotBasePanel;
 use Illuminate\Contracts\Support\Renderable;
+// --- Services --
+
+use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Models\Panels\XotBasePanel;
 
 /**
  * Class FavoritePanel.
@@ -19,7 +18,6 @@ class FavoritePanel extends XotBasePanel {
      * The model the resource corresponds to.
      */
     public static string $model = 'Modules\Rating\Models\Favorite';
-
 
     /**
      * index navigation.
@@ -43,7 +41,6 @@ class FavoritePanel extends XotBasePanel {
      */
     public static function indexQuery(array $data, $query) {
         return $query->where('user_id', Auth::id());
-        
     }
 
     /**
@@ -51,7 +48,7 @@ class FavoritePanel extends XotBasePanel {
      */
     public function fields(): array {
         return [
-             (object) [
+            (object) [
                 'type' => 'Id',
                 'name' => 'id',
                 'comment' => null,
@@ -76,10 +73,8 @@ class FavoritePanel extends XotBasePanel {
 
     /**
      * Get the actions available for the resource.
-     *
-     * @return array
      */
-    public function actions():array {
+    public function actions(): array {
         return [
             new Actions\Favorite\NoMoreFavoriteAction(Auth::id()),
         ];

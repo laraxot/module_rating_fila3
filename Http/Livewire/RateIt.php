@@ -13,7 +13,7 @@ use Modules\Xot\Services\PanelService;
  * Class RateIt.
  */
 class RateIt extends Component {
-    //public $model;
+    // public $model;
 
     public int $post_id;
 
@@ -24,13 +24,13 @@ class RateIt extends Component {
      */
     public $user_id;
 
-    //--------------
+    // --------------
 
     public string $modal_guid;
 
     public string $modal_title;
 
-    //public $fav;
+    // public $fav;
 
     /**
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException

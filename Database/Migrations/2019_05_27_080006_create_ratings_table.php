@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
-//----- models -----
+// ----- models -----
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /**
@@ -14,20 +14,19 @@ class CreateRatingsTable extends XotBaseMigration {
      * db up.
      */
     public function up(): void {
-        //-- CREATE --
+        // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
-                    $table->increments('id');
-                    $table->string('related_type', 50)->index()->nullable();
-                    $table->string('created_by')->nullable();
-                    $table->string('updated_by')->nullable();
-                    $table->string('deleted_by')->nullable();
-                    $table->timestamps();
-                }
+                $table->increments('id');
+                $table->string('related_type', 50)->index()->nullable();
+                $table->string('created_by')->nullable();
+                $table->string('updated_by')->nullable();
+                $table->string('deleted_by')->nullable();
+                $table->timestamps();
+            }
             );
 
-
-        //-- UPDATE --
+        // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table) {
                 if (! $this->hasColumn('post_id')) {

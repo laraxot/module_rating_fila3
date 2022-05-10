@@ -24,13 +24,13 @@ class Multi extends Component {
      */
     public $user_id;
 
-    //--------------
+    // --------------
 
     public string $modal_guid;
 
     public string $modal_title;
 
-    //public $fav;
+    // public $fav;
 
     /**
      * @param Model $model
@@ -69,12 +69,12 @@ class Multi extends Component {
     }
 
     public function cancel(): void {
-        //$this->updateMode = false;
-        //$this->resetInputFields();
+        // $this->updateMode = false;
+        // $this->resetInputFields();
     }
 
     private function resetInputFields(): void {
-        //$this->name = '';
-        //$this->email = '';
+        // $this->name = '';
+        // $this->email = '';
     }
 }

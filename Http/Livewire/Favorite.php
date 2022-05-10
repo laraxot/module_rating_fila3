@@ -16,7 +16,7 @@ use Modules\Xot\Services\PanelService;
  * Class Favorite.
  */
 class Favorite extends Component {
-    //public $model;
+    // public $model;
 
     public int $post_id;
 
@@ -44,7 +44,7 @@ class Favorite extends Component {
             ->first();
 
         $this->fav = false;
-        if (is_object($fav)) {
+        if (\is_object($fav)) {
             $this->fav = true;
         }
     }

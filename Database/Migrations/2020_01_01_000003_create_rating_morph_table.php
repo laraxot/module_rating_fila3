@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-//----- models -----
+// ----- models -----
 
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
@@ -18,24 +17,23 @@ class CreateRatingMorphTable extends XotBaseMigration {
      * @return void
      */
     public function up() {
-        //----- create -----
-        //-- CREATE --
+        // ----- create -----
+        // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
-                    $table->increments('id');
-                    $table->nullableMorphs('post');
-                    //$table->nullableMorphs('related');
-                    //$table->integer('rating')->nullable();
-                    $table->integer('value')->nullable();
-                    $table->string('created_by')->nullable();
-                    $table->string('updated_by')->nullable();
-                    $table->string('deleted_by')->nullable();
-                    $table->timestamps();
-                }
+                $table->increments('id');
+                $table->nullableMorphs('post');
+                // $table->nullableMorphs('related');
+                // $table->integer('rating')->nullable();
+                $table->integer('value')->nullable();
+                $table->string('created_by')->nullable();
+                $table->string('updated_by')->nullable();
+                $table->string('deleted_by')->nullable();
+                $table->timestamps();
+            }
             );
 
-
-        //-- UPDATE --
+        // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table) {
                 if (! $this->hasColumn('user_id')) {
@@ -50,7 +48,7 @@ class CreateRatingMorphTable extends XotBaseMigration {
                 if ($this->hasColumn('related_type')) {
                     $table->dropColumn('related_type');
                 }
-                if ($this->hasColumn('rating')) { //meglio tenere per relazione a ratings che sarebbero gli obiettivi
+                if ($this->hasColumn('rating')) { // meglio tenere per relazione a ratings che sarebbero gli obiettivi
                     $table->renameColumn('rating', 'value');
                 }
                 if ($this->hasColumn('auth_user_id')) {
@@ -60,6 +58,4 @@ class CreateRatingMorphTable extends XotBaseMigration {
             }
         );
     }
-
-
 }

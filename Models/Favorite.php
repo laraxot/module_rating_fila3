@@ -6,10 +6,10 @@ namespace Modules\Rating\Models;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-//------- services ----
-//------- traits ---
+// ------- services ----
+// ------- traits ---
 
-//------- services ----
+// ------- services ----
 
 /**
  * Modules\Rating\Models\Favorite.
@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @property string|null                     $updated_by
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite query()
@@ -34,10 +35,11 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedBy($value)
  * @mixin \Eloquent
- * @property-read \Illuminate\Database\Eloquent\Collection|Favorite[] $favorites
- * @property-read int|null $favorites_count
- * @property-read \Illuminate\Database\Eloquent\Collection|Favorite[] $myFavorites
- * @property-read int|null $my_favorites_count
+ *
+ * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $favorites
+ * @property int|null                                            $favorites_count
+ * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $myFavorites
+ * @property int|null                                            $my_favorites_count
  * @mixin IdeHelperFavorite
  */
 class Favorite extends BaseModel {
@@ -50,11 +52,11 @@ class Favorite extends BaseModel {
      * Relations.
      */
     public function favorites(): MorphMany {
-        return $this->morphMany(Favorite::class, 'post');
+        return $this->morphMany(self::class, 'post');
     }
 
     public function myFavorites(): MorphMany {
-        return $this->morphMany(Favorite::class, 'post')
+        return $this->morphMany(self::class, 'post')
             ->where('user_id', \Auth::id());
     }
 
@@ -63,8 +65,7 @@ class Favorite extends BaseModel {
             ->where('user_id', \Auth::id())->count() > 0;
     }
 
-    public function linkable()
-    {
+    public function linkable() {
         return $this->morphTo('post');
     }
 }

@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Panels\Actions\Favorite;
 
 use Illuminate\Support\Facades\Route;
-//-------- services --------
+// -------- services --------
 use Modules\Xot\Models\Panels\Actions\XotBasePanelAction;
 
-//-------- bases -----------
+// -------- bases -----------
 
 /**
  * Class NoMoreFavoriteAction.
@@ -16,8 +16,8 @@ use Modules\Xot\Models\Panels\Actions\XotBasePanelAction;
 class NoMoreFavoriteAction extends XotBasePanelAction {
     public bool $onContainer = true;
 
-    //public bool $onItem = true; //onlyContainer
-    //mettere freccette su e giù
+    // public bool $onItem = true; //onlyContainer
+    // mettere freccette su e giù
 
     public string $icon = '<i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i>';
 
@@ -38,17 +38,17 @@ class NoMoreFavoriteAction extends XotBasePanelAction {
     /**
      * @return mixed
      */
-    //-- Perform the action on the given models.
+    // -- Perform the action on the given models.
     public function handle() {
-        //dddx($this);
-        //return '';
-        //dddx($this->row);
-        //dddx($this->rows);
+        // dddx($this);
+        // return '';
+        // dddx($this->row);
+        // dddx($this->rows);
     }
 
     public function postHandle(): string {
-        //$this->rows->where('user_id', $this->user_id);
-        //$route_params = Route::current()->parameters();
+        // $this->rows->where('user_id', $this->user_id);
+        // $route_params = Route::current()->parameters();
         [$containers,$items] = params2ContainerItem();
         $func = 'favorites';
         last($items)->$func()->where('user_id', $this->user_id)->delete();

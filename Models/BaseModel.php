@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\Rating\Models;
 
 use Illuminate\Database\Eloquent\Model;
-////use Laravel\Scout\Searchable;
-//---------- traits
+// //use Laravel\Scout\Searchable;
+// ---------- traits
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -14,7 +14,7 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModel extends Model {
     use Updater;
-    //use Searchable;
+    // use Searchable;
 
     protected $connection = 'rating'; // this will use the specified database connection
     /**
@@ -25,7 +25,7 @@ abstract class BaseModel extends Model {
      * @var array
      */
     protected $casts = [
-        //'published_at' => 'datetime:Y-m-d', // da verificare
+        // 'published_at' => 'datetime:Y-m-d', // da verificare
     ];
 
     /**
@@ -44,7 +44,7 @@ abstract class BaseModel extends Model {
      * @var array
      */
     protected $hidden = [
-        //'password'
+        // 'password'
     ];
     /**
      * @var bool

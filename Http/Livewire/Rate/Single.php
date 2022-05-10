@@ -34,13 +34,13 @@ class Single extends Component {
      */
     public $user_id = null;
 
-    //--------------
+    // --------------
 
     public string $modal_guid;
 
     public string $modal_title;
 
-    //public $fav;
+    // public $fav;
 
     /**
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
@@ -77,7 +77,7 @@ class Single extends Component {
         $val = RatingMorph::firstWhere($where);
 
         $this->val = null;
-        if (is_object($val)) {
+        if (\is_object($val)) {
             $this->val = (int) $val->value;
         }
         $view_params = [

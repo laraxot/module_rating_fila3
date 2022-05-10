@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\Rating\Models;
 
 use Illuminate\Database\Eloquent\Model;
-////use Laravel\Scout\Searchable;
-//---------- traits
+// //use Laravel\Scout\Searchable;
+// ---------- traits
 
 use Modules\Lang\Models\Traits\LinkedTrait;
 use Modules\Xot\Traits\Updater;
@@ -15,9 +15,9 @@ use Modules\Xot\Traits\Updater;
  * Class BaseModelLang.
  */
 abstract class BaseModelLang extends Model {
-    use Updater;
-    //use Searchable;
     use LinkedTrait;
+    // use Searchable;
+    use Updater;
 
     protected $connection = 'rating'; // this will use the specified database connection
 
@@ -30,7 +30,7 @@ abstract class BaseModelLang extends Model {
      * @var array
      */
     protected $casts = [
-        //'published_at' => 'datetime:Y-m-d', // da verificare
+        // 'published_at' => 'datetime:Y-m-d', // da verificare
     ];
 
     /**
@@ -52,7 +52,7 @@ abstract class BaseModelLang extends Model {
      * @var array
      */
     protected $hidden = [
-        //'password'
+        // 'password'
     ];
 
     /**
@@ -60,7 +60,7 @@ abstract class BaseModelLang extends Model {
      */
     public $timestamps = true;
 
-    //-----------
+    // -----------
     /*
     protected $id;
     protected $post;

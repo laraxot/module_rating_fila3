@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
-////use Laravel\Scout\Searchable;
+// //use Laravel\Scout\Searchable;
 
-//----- models------
+// ----- models------
 use Illuminate\Support\Facades\Auth;
-//---- services -----
+// ---- services -----
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Services\PanelService as Panel;
 
-//------ traits ---
+// ------ traits ---
 
 /**
  * Trait RatingTrait.
@@ -72,8 +72,8 @@ trait RatingTrait {
             ->wherePivot('user_id', Auth::id());
     }
 
-    //----- mutators -----
-    //*
+    // ----- mutators -----
+    // *
 
     /**
      * @param float $value
@@ -113,23 +113,23 @@ trait RatingTrait {
         if (null !== $value) {
             return $value;
         }
-        //Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        //$value = $this->ratings->count('pivot.rating');
-        $value = $this->ratings->count(); //?? forse fare filtro
+        // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
+        // $value = $this->ratings->count('pivot.rating');
+        $value = $this->ratings->count(); // ?? forse fare filtro
         $this->ratings_count = $value;
         $this->save();
 
         return $value;
     }
 
-    //*/
+    // */
     /*
     public function setMyRatingAttribute($value){
     dddx($value);
     }
      */
 
-    //------ functions ------
+    // ------ functions ------
 
     /**
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
@@ -139,19 +139,19 @@ trait RatingTrait {
      */
     public function ratingAvgHtml() {
         $ratings = $this->ratings;
-        //Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        //$pivot_avg = $ratings->avg('pivot.rating');
+        // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
+        // $pivot_avg = $ratings->avg('pivot.rating');
         $pivot_avg = $this->ratings_avg;
-        //$pivot_cout = $ratings->count('pivot.rating');
+        // $pivot_cout = $ratings->count('pivot.rating');
         $pivot_cout = $this->ratings_count;
 
         $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
         $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
-        //$rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
-        //$rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
+        // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
+        // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
         $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
-        //http://geek.local/public_html/it/article/prova-articolo?_act=rate
+        // http://geek.local/public_html/it/article/prova-articolo?_act=rate
         /*
         return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
         Rate It </a>';

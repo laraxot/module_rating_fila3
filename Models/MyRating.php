@@ -41,6 +41,7 @@ namespace Modules\Rating\Models;
  * @property \Illuminate\Database\Eloquent\Collection|\Modules\Rating\Models\Favorite[] $myFavorites
  * @property int|null                                                                   $my_favorites_count
  * @property \Modules\Rating\Models\Post|null                                           $post
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem($guid)
@@ -54,12 +55,17 @@ namespace Modules\Rating\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost($guid)
  * @mixin \Eloquent
+ *
  * @property string|null $note
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereNote($value)
+ *
  * @property int $post_id
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating wherePostId($value)
- * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Blog\Models\Post[] $posts
- * @property-read int|null $posts_count
+ *
+ * @property \Illuminate\Database\Eloquent\Collection|\Modules\Blog\Models\Post[] $posts
+ * @property int|null                                                             $posts_count
  * @mixin IdeHelperMyRating
  */
 class MyRating extends BaseModelLang {

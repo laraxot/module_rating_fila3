@@ -19,6 +19,7 @@ namespace Modules\Rating\Models;
  * @property \Illuminate\Support\Carbon|null    $created_at
  * @property \Illuminate\Support\Carbon|null    $updated_at
  * @property int|null                           $user_id
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph query()
@@ -35,9 +36,13 @@ namespace Modules\Rating\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereUpdatedBy($value)
  * @mixin \Eloquent
+ *
  * @property int|null $value
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereValue($value)
+ *
  * @property int|null $related_id
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereRelatedId($value)
  * @mixin IdeHelperRatingMorph
  */
@@ -48,17 +53,14 @@ class RatingMorph extends BaseMorphPivot {
     protected $fillable = [
         'id',
         'post_id', 'post_type',
-        'rating_id', /* 'related_type',  */
+        'rating_id', /* 'related_type', */
         'value',
         'user_id',
     ];
 
-    //-------- RELATIONSHIP -----------
+    // -------- RELATIONSHIP -----------
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function rating():\Illuminate\Database\Eloquent\Relations\HasOne {
-        return $this->hasOne(Rating::class); //, 'id', 'rating_id');
+    public function rating(): \Illuminate\Database\Eloquent\Relations\HasOne {
+        return $this->hasOne(Rating::class); // , 'id', 'rating_id');
     }
 }

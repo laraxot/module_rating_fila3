@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Panels\Actions;
 
-//-------- services --------
+// -------- services --------
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\Session;
 use Modules\Theme\Services\ThemeService;
 use Modules\Xot\Models\Panels\Actions\XotBasePanelAction;
 
-//-------- bases -----------
+// -------- bases -----------
 
 /**
  * Class RateItAction.
@@ -44,7 +44,7 @@ class RateItAction extends XotBasePanelAction {
     }
     */
 
-    //-- Perform the action on the given models.
+    // -- Perform the action on the given models.
 
     public function handle(): Renderable {
         $view = 'blog::actions.rate';
@@ -54,18 +54,18 @@ class RateItAction extends XotBasePanelAction {
             ;
     }
 
-    //end handle
+    // end handle
 
     /**
      * @return mixed
      */
     public function postHandle() {
-        //$panel = $this->updateRow(['row' => $this->row]);
+        // $panel = $this->updateRow(['row' => $this->row]);
         $panel = $this->panel->update(request()->all());
         $swal = [
             'icon' => 'success',
             'title' => 'Grazie di aver votato',
-            //'text'=> 'clicca su back per torn!',
+            // 'text'=> 'clicca su back per torn!',
         ];
         Session::flash('swal', $swal);
         $this->setRow($panel->getRow());
