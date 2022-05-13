@@ -1,5 +1,5 @@
 <div class="col-lg-3 pt-3">
-    <form class="pe-xl-3" action="medias">
+    <form class="pe-xl-3" action="favorites">
         {{-- <div class="mb-4">
             <label class="form-label" for="form_search">Keyword</label>
             <div class="input-label-absolute input-label-absolute-right">
