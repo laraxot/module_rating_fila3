@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Modules\Rating\Models\Like
+ * Modules\Rating\Models\Like.
  *
  * @property int                             $id
  * @property int                             $user_id
