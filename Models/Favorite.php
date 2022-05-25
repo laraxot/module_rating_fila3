@@ -22,7 +22,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @property string|null                     $updated_by
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite query()
@@ -35,12 +34,12 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedBy($value)
  * @mixin \Eloquent
- *
  * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $favorites
  * @property int|null                                            $favorites_count
  * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $myFavorites
  * @property int|null                                            $my_favorites_count
  * @mixin IdeHelperFavorite
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $linkable
  */
 class Favorite extends BaseModel {
     /**
