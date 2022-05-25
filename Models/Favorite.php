@@ -38,8 +38,8 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @property int|null                                            $favorites_count
  * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $myFavorites
  * @property int|null                                            $my_favorites_count
- * @mixin IdeHelperFavorite
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $linkable
+ * @mixin IdeHelperFavorite
  */
 class Favorite extends BaseModel {
     /**

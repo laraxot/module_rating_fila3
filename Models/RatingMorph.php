@@ -39,8 +39,8 @@ namespace Modules\Rating\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereValue($value)
  * @property int|null $related_id
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereRelatedId($value)
- * @mixin IdeHelperRatingMorph
  * @property int|null $auth_user_id
+ * @mixin IdeHelperRatingMorph
  */
 class RatingMorph extends BaseMorphPivot {
     /**
