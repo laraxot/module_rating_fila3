@@ -25,7 +25,7 @@ abstract class BaseModelLang extends Model {
      *
      * @var bool
      */
-    // public static $snakeAttributes = true;
+    public static $snakeAttributes = true;
 
     protected $perPage = 30;
 
@@ -37,7 +37,7 @@ abstract class BaseModelLang extends Model {
     protected $fillable = ['id'];
 
     /**
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
         // 'published_at' => 'datetime:Y-m-d', // da verificare
@@ -59,7 +59,7 @@ abstract class BaseModelLang extends Model {
     public $incrementing = true;
 
     /**
-     * @var array
+     * @var array<int, string>
      */
     protected $hidden = [
         // 'password'
