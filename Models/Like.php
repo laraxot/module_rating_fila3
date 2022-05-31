@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Modules\Rating\Models\Like.
+ * Modules\Rating\Models\Like
  *
- * @property int                             $id
- * @property int                             $user_id
- * @property string|null                     $likeable_type
- * @property int|null                        $likeable_id
+ * @property int $id
+ * @property int $user_id
+ * @property string|null $likeable_type
+ * @property int|null $likeable_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|Like newModelQuery()
@@ -26,7 +26,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Like whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Like whereUserId($value)
  * @mixin \Eloquent
- * @mixin IdeHelperLike
  */
 final class Like extends Model {
     use HasFactory;

@@ -12,20 +12,24 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 // ------- services ----
 
 /**
- * Modules\Rating\Models\Favorite.
+ * Modules\Rating\Models\Favorite
  *
- * @property int                             $id
- * @property string|null                     $post_type
- * @property int|null                        $post_id
- * @property int|null                        $user_id
- * @property string|null                     $created_by
- * @property string|null                     $updated_by
+ * @property int $id
+ * @property string|null $post_type
+ * @property int|null $post_id
+ * @property int|null $user_id
+ * @property string|null $created_by
+ * @property string|null $updated_by
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|Favorite[] $favorites
+ * @property-read int|null $favorites_count
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $linkable
+ * @property-read \Illuminate\Database\Eloquent\Collection|Favorite[] $myFavorites
+ * @property-read int|null $my_favorites_count
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite query()
- * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereAuthUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereId($value)
@@ -33,13 +37,8 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite wherePostType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUserId($value)
  * @mixin \Eloquent
- * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $favorites
- * @property int|null                                            $favorites_count
- * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $myFavorites
- * @property int|null                                            $my_favorites_count
- * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $linkable
- * @mixin IdeHelperFavorite
  */
 class Favorite extends BaseModel {
     /**
