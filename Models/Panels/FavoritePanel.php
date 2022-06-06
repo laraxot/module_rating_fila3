@@ -25,7 +25,10 @@ class FavoritePanel extends XotBasePanel {
      */
     public function indexNav(): ?Renderable {
         if (! inAdmin()) {
-            $view = 'rating::favorites.index.nav';
+            /** 
+        * @phpstan-var view-string
+        */
+        $view = 'rating::favorites.index.nav';
 
             return view()->make($view);
         }

@@ -64,6 +64,9 @@ class RateIt extends Component {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function render() {
+        /** 
+        * @phpstan-var view-string
+        */
         $view = 'xot::livewire.rate_it';
         $view_params = [
             'view' => $view,
