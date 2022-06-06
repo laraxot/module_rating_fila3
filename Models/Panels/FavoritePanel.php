@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Panels;
 
-use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\Auth;
 // --- Services --
 
-use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Contracts\RowsContract;
 use Modules\Xot\Models\Panels\XotBasePanel;
+use Illuminate\Contracts\Support\Renderable;
 
 /**
  * Class FavoritePanel.

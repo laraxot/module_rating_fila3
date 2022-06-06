@@ -18,20 +18,6 @@ class RatingMorphPanel extends XotBasePanel {
 
     protected static string $title = 'title';
 
-    protected static array $search = [];
-
-    public function with(): array {
-        return [];
-    }
-
-    public function search(): array {
-        return [];
-    }
-
-    public function optionLabel(object $row): string {
-        return $row->area_define_name;
-    }
-
     /**
      * @return object[]
      */

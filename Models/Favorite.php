@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Models;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 // ------- services ----
 // ------- traits ---
@@ -63,7 +64,7 @@ class Favorite extends BaseModel {
             ->where('user_id', \Auth::id())->count() > 0;
     }
 
-    public function linkable() {
+    public function linkable():MorphTo {
         return $this->morphTo('post');
     }
 }
