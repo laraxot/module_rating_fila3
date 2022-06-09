@@ -16,6 +16,11 @@ trait HasLikes {
         return $this->likesRelation;
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     protected static function bootHasLikes() {
         static::deleting(function ($model) {
             $model->likesRelation()->delete();
@@ -24,12 +29,24 @@ trait HasLikes {
         });
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param User $user
+     * @return void
+     */
     public function likedBy(User $user) {
         $this->likesRelation()->create(['user_id' => $user->id]);
 
         $this->unsetRelation('likesRelation');
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param User $user
+     * @return void
+     */
     public function dislikedBy(User $user) {
         optional($this->likesRelation()->where('user_id', $user->id)->first())->delete();
 
@@ -46,6 +63,12 @@ trait HasLikes {
         return $this->morphMany(Like::class, 'likesRelation', 'likeable_type', 'likeable_id');
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param User $user
+     * @return boolean
+     */
     public function isLikedBy(User $user): bool {
         return $this->likesRelation()->where('user_id', $user->id)->exists();
     }
