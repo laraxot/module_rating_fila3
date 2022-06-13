@@ -7,10 +7,11 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Http\Livewire;
 
-use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
-use Modules\Rating\Models\Favorite as FavoriteModel;
+use Illuminate\Support\Facades\Auth;
 use Modules\Xot\Services\PanelService;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Rating\Models\Favorite as FavoriteModel;
 
 /**
  * Class Favorite.
@@ -35,8 +36,12 @@ class Favorite extends Component {
      */
     public function mount(Model $model): void {
         $this->post_type = PanelService::make()->get($model)->postType();
-        $this->post_id = $model->getKey();
-        $this->user_id = \Auth::id();
+        /**
+         * @var int
+         */
+        $id=$model->getKey();
+        $this->post_id = $id;
+        $this->user_id = Auth::id();
 
         $fav = FavoriteModel::where('user_id', $this->user_id)
             ->where('post_type', $this->post_type)
@@ -55,7 +60,7 @@ class Favorite extends Component {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function render() {
-        /** 
+        /**
         * @phpstan-var view-string
         */
         $view = 'xot::livewire.favorite';

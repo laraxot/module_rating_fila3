@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Http\Livewire\Rate;
 
-use Illuminate\Database\Eloquent\Model;
+use Exception;
 use Livewire\Component;
 use Modules\Rating\Models\Rating;
+use Illuminate\Support\Facades\Auth;
 use Modules\Xot\Services\PanelService;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Multi.
@@ -41,8 +43,12 @@ class Multi extends Component {
     public function mount($model): void {
         $this->model = $model;
         $this->post_type = PanelService::make()->get($model)->postType();
-        $this->post_id = $model->getKey();
-        $this->user_id = \Auth::id();
+        $id=$model->getKey();
+        if(!is_int($id)){
+            throw new Exception('['.__LINE__.']['.__LINE__.']');
+        }
+        $this->post_id = $id;
+        $this->user_id = Auth::id();
         $this->modal_guid = 'modalrateit';
         $this->modal_title = 'Vota';
     }
@@ -56,7 +62,7 @@ class Multi extends Component {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function render() {
-        /** 
+        /**
         * @phpstan-var view-string
         */
         $view = 'blog::livewire.rate.multi';

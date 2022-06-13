@@ -48,7 +48,8 @@ trait HasLikes {
      * @return void
      */
     public function dislikedBy(User $user) {
-        optional($this->likesRelation()->where('user_id', $user->id)->first())->delete();
+        $where=$this->likesRelation()->where('user_id', $user->id)->first();
+        $where->delete();
 
         $this->unsetRelation('likesRelation');
     }
