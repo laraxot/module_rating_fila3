@@ -17,7 +17,7 @@ trait HasLikes {
     }
 
     /**
-     * Undocumented function
+     * Undocumented function.
      *
      * @return void
      */
@@ -30,9 +30,8 @@ trait HasLikes {
     }
 
     /**
-     * Undocumented function
+     * Undocumented function.
      *
-     * @param User $user
      * @return void
      */
     public function likedBy(User $user) {
@@ -42,13 +41,15 @@ trait HasLikes {
     }
 
     /**
-     * Undocumented function
+     * Undocumented function.
      *
-     * @param User $user
      * @return void
      */
     public function dislikedBy(User $user) {
-        $where=$this->likesRelation()->where('user_id', $user->id)->first();
+        /**
+         * @var \Modules\Rating\Models\Like
+         */
+        $where = $this->likesRelation()->where('user_id', $user->id)->first();
         $where->delete();
 
         $this->unsetRelation('likesRelation');
@@ -65,10 +66,7 @@ trait HasLikes {
     }
 
     /**
-     * Undocumented function
-     *
-     * @param User $user
-     * @return boolean
+     * Undocumented function.
      */
     public function isLikedBy(User $user): bool {
         return $this->likesRelation()->where('user_id', $user->id)->exists();
