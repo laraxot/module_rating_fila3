@@ -10,7 +10,6 @@ namespace Modules\Rating\Models;
  * @property int $id
  * @property string|null $post_type
  * @property int|null $post_id
- * @property int|null $rating_id
  * @property int|null $value
  * @property string|null $created_by
  * @property string|null $updated_by
@@ -18,6 +17,7 @@ namespace Modules\Rating\Models;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property int|null $user_id
+ * @property int $rating_id
  * @property-read \Modules\Rating\Models\Rating|null $rating
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph newQuery()

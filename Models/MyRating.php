@@ -7,13 +7,14 @@ namespace Modules\Rating\Models;
 /**
  * Modules\Rating\Models\MyRating
  *
- * @property int $post_id
+ * @property int $id
  * @property string|null $related_type
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $deleted_by
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int|null $post_id
  * @property string|null $guid
  * @property string|null $image_src
  * @property-read string|null $lang
@@ -35,6 +36,7 @@ namespace Modules\Rating\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereDeletedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating wherePostId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereRelatedType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereUpdatedAt($value)
