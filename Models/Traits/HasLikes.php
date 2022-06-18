@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Modules\LU\Models\User;
 use Modules\Rating\Models\Like;
 
 trait HasLikes {
@@ -30,22 +29,22 @@ trait HasLikes {
     }
 
     /**
-     * Undocumented function.
+     * @param \Modules\LU\Models\User|null $user
      *
      * @return void
      */
-    public function likedBy(User $user) {
+    public function likedBy($user) {
         $this->likesRelation()->create(['user_id' => $user->id]);
 
         $this->unsetRelation('likesRelation');
     }
 
     /**
-     * Undocumented function.
+     * @param \Modules\LU\Models\User|null $user
      *
      * @return void
      */
-    public function dislikedBy(User $user) {
+    public function dislikedBy($user) {
         /**
          * @var \Modules\Rating\Models\Like
          */
@@ -68,9 +67,11 @@ trait HasLikes {
     }
 
     /**
-     * Undocumented function.
+     * @param \Modules\LU\Models\User|null $user
+     *
+     * @return bool
      */
-    public function isLikedBy(User $user): bool {
+    public function isLikedBy($user) {
         return $this->likesRelation()->where('user_id', $user->id)->exists();
     }
 }
