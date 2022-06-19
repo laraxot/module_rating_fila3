@@ -38,7 +38,7 @@
                         <div class="col-sm-6 col-xl-4 mb-5">
                             <x-card type="result" :model="$row">
                                 <x-slot name="title">{{ $row->title }} </x-slot>
-                                <x-slot name="url">{{ Panel::make()->get($row)->setName('medias')->url() }}</x-slot>
+                                <x-slot name="url">{{ Panel::make()->get($row)->setName('presses')->url() }}</x-slot>
                                 <x-slot name="img_src">{{ $row->poster_path }}</x-slot>
                                 <x-slot name="avatar">{{ optional($row->channel)->logo }}</x-slot>
                                 <x-slot name="category">{{ $row->media_type }}</x-slot>
