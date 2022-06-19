@@ -29,7 +29,9 @@ trait HasLikes {
     }
 
     /**
-     * @param \Modules\LU\Models\User|null $user
+     * param \Modules\LU\Models\User|null $user.
+     *
+     * @param \Modules\LU\Models\User $user
      *
      * @return void
      */
@@ -40,7 +42,9 @@ trait HasLikes {
     }
 
     /**
-     * @param \Modules\LU\Models\User|null $user
+     * param \Modules\LU\Models\User|null $user.
+     *
+     * @param \Modules\LU\Models\User $user
      *
      * @return void
      */
@@ -67,7 +71,9 @@ trait HasLikes {
     }
 
     /**
-     * @param \Modules\LU\Models\User|null $user
+     * param \Modules\LU\Models\User|null $user.
+     *
+     * @param \Modules\LU\Models\User $user
      *
      * @return bool
      */
