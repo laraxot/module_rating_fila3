@@ -1,7 +1,3 @@
-@php
-//dddx(get_defined_vars());
-//dddx($mod_trad . '.' . $_panel_name);
-@endphp
 @extends('pub_theme::layouts.app')
 @section('content')
     <br /><br />
