@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Panels;
 
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Support\Renderable;
 // --- Services --
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Modules\Xot\Contracts\RowsContract;
 use Modules\Xot\Models\Panels\XotBasePanel;
-use Illuminate\Contracts\Support\Renderable;
 
 /**
  * Class FavoritePanel.
@@ -25,10 +26,10 @@ class FavoritePanel extends XotBasePanel {
      */
     public function indexNav(): ?Renderable {
         if (! inAdmin()) {
-            /** 
-        * @phpstan-var view-string
-        */
-        $view = 'rating::favorites.index.nav';
+            /**
+             * @phpstan-var view-string
+             */
+            $view = 'rating::favorites.index.nav';
 
             return view()->make($view);
         }
@@ -44,8 +45,40 @@ class FavoritePanel extends XotBasePanel {
      * @return RowsContract
      */
     public static function indexQuery(array $data, $query) {
-        return $query->where('user_id', Auth::id());
+        return $query->where('user_id', Auth::id())
+            // ->with('linkable')
+            ;
     }
+
+    /**
+     * @return string[]
+     */
+    public function search(): array {
+        return [
+            'linkable.title', 'linkable.txt',
+        ];
+    }
+
+    /*
+    public function filters(Request $request = null): array {
+        // dddx($request);
+
+        return [
+            (object) [
+                'param_name' => 'q', // nome dell'input
+                'field_name' => 'post.title', // nome del campo collegato
+                // 'rules' => 'required',
+                // 'op'=>'=',
+            ],
+            (object) [
+                'param_name' => 'start_with',
+                'field_name' => 'starts_with:foo,bar,...',
+                // 'rules' => 'required',
+                // 'op'=>'=',
+            ],
+        ];
+    }
+    */
 
     /**
      * @return object[]
