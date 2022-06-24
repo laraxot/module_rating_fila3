@@ -30,11 +30,13 @@ class Favorite extends Component {
 
     public bool $fav;
 
+    public string $view;
+
     /**
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      * @throws \ReflectionException
      */
-    public function mount(Model $model): void {
+    public function mount(Model $model, ?string $view = 'rating::livewire.favorite'): void {
         $this->post_type = PanelService::make()->get($model)->postType();
         /**
          * @var int
@@ -52,6 +54,8 @@ class Favorite extends Component {
         if (\is_object($fav)) {
             $this->fav = true;
         }
+
+        $this->view = $view;
     }
 
     /**
@@ -63,7 +67,8 @@ class Favorite extends Component {
         /**
          * @phpstan-var view-string
          */
-        $view = 'rating::livewire.favorite';
+        // $view = 'rating::livewire.favorite';
+        $view = $this->view;
         $view_params = [
             'view' => $view,
         ];
