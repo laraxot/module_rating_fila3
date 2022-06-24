@@ -1,10 +1,12 @@
 <div>
     {{-- non "acchiappa" il wire:click, anche con la blade originale --}}
-    <span wire:click="update()">
-        <i
-            @if ($fav) class="ri-heart-fill"
+    <li>
+        <span wire:click="update()">
+            <i
+                @if ($fav) class="ri-heart-fill"
                 @else
                     class="ri-heart-line" @endif>
-        </i>
-    </span>
+            </i>
+        </span>
+    </li>
 </div>
