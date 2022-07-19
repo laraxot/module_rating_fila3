@@ -1,5 +1,4 @@
 <div>
-    {{-- non "acchiappa" il wire:click, anche con la blade originale --}}
     <li>
         <span wire:click="update()">
             <i

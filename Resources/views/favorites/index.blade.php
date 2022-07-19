@@ -32,7 +32,7 @@
                         {{-- <x-card.panel :panel="$_panel->newPanel($media)" />
                         <x-card type="rss" :model="$media" /> --}}
                         <div class="col-sm-6 col-xl-4 mb-5">
-                            <x-card type="result" :model="$row">
+                            {{-- <x-card type="result" :model="$row">
                                 <x-slot name="title">{{ $row->title }} </x-slot>
                                 <x-slot name="url">{{ Panel::make()->get($row)->setName('presses')->url() }}</x-slot>
                                 <x-slot name="img_src">{{ $row->poster_path }}</x-slot>
@@ -40,7 +40,10 @@
                                 <x-slot name="category">{{ $row->media_type }}</x-slot>
                                 <x-slot name="q">{{ request('q', '') }}</x-slot>
                                 <x-slot name="txt">{{ $row->txt }}</x-slot>
-                            </x-card>
+                            </x-card> --}}
+                            <x-card.press.clip :clip="$row" type="social">
+
+                            </x-card.press.clip>
 
                             {{-- <livewire:card.result.panel:panel="$_panel->newPanel($media)":q="request('q','')"/> --}}
                             {{-- <livewire:card.result.model :panel="$_panel->newPanel($media)" :q="request('q')" />
