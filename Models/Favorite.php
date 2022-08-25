@@ -7,6 +7,8 @@ namespace Modules\Rating\Models;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+use Modules\Lang\Models\Post;
+
 // ------- services ----
 // ------- traits ---
 
@@ -65,6 +67,8 @@ class Favorite extends BaseModel {
     }
 
     public function linkable():MorphTo {
+        //dddx(Favorite::where('post_type','LIKE','%media%')->delete());
+    
         return $this->morphTo('post');
     }
 }
