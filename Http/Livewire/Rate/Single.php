@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Rating\Http\Livewire\Rate;
 
 use Exception;
+use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Xot\Services\PanelService;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Single.
@@ -51,8 +51,8 @@ class Single extends Component {
         $this->model = $model;
         $this->goal = $goal;
         $this->post_type = PanelService::make()->get($model)->postType();
-        $id=$model->getKey();
-        if(!is_int($id)){
+        $id = $model->getKey();
+        if (! is_int($id)) {
             throw new Exception('['.__LINE__.']['.__FILE__.']');
         }
         $this->post_id = $id;
@@ -71,8 +71,8 @@ class Single extends Component {
      */
     public function render() {
         /**
-        * @phpstan-var view-string
-        */
+         * @phpstan-var view-string
+         */
         $view = 'blog::livewire.rate.single';
 
         $where = [

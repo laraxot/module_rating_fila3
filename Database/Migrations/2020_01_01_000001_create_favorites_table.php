@@ -38,7 +38,8 @@ class CreateFavoritesTable extends XotBaseMigration {
                 if ($this->hasColumn('auth_user_id')) {
                     $table->renameColumn('auth_user_id', 'user_id');
                 }
-            });
+            }
+        );
     }
 
     // end up

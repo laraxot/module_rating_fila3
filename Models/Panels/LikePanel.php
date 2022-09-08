@@ -20,14 +20,13 @@ class LikePanel extends XotBasePanel {
      */
     public static string $title = 'title';
 
-    
     /**
      * Get the fields displayed by the resource.
         'value'=>'..',
      */
     public function fields(): array {
         return [
-           (object) [
+            (object) [
                 'type' => 'Integer',
                 'name' => 'user_id',
                 'rules' => 'required',

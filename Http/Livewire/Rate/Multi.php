@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\Rating\Http\Livewire\Rate;
 
 use Exception;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Modules\Rating\Models\Rating;
-use Illuminate\Support\Facades\Auth;
 use Modules\Xot\Services\PanelService;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Multi.
@@ -43,8 +43,8 @@ class Multi extends Component {
     public function mount($model): void {
         $this->model = $model;
         $this->post_type = PanelService::make()->get($model)->postType();
-        $id=$model->getKey();
-        if(!is_int($id)){
+        $id = $model->getKey();
+        if (! is_int($id)) {
             throw new Exception('['.__LINE__.']['.__LINE__.']');
         }
         $this->post_id = $id;
@@ -63,8 +63,8 @@ class Multi extends Component {
      */
     public function render() {
         /**
-        * @phpstan-var view-string
-        */
+         * @phpstan-var view-string
+         */
         $view = 'blog::livewire.rate.multi';
 
         $goals = Rating::where('related_type', $this->post_type)->get();
@@ -82,8 +82,8 @@ class Multi extends Component {
         // $this->resetInputFields();
     }
 
-    //private function resetInputFields(): void {
+    // private function resetInputFields(): void {
         // $this->name = '';
         // $this->email = '';
-    //}
+    // }
 }

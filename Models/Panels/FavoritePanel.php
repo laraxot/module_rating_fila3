@@ -47,7 +47,7 @@ class FavoritePanel extends XotBasePanel {
     public static function indexQuery(array $data, $query) {
         return $query->where('user_id', Auth::id())
             // ->with('linkable')
-            ;
+        ;
     }
 
     /**

@@ -5,20 +5,21 @@ declare(strict_types=1);
 namespace Modules\Rating\Models;
 
 /**
- * Modules\Rating\Models\RatingMorph
+ * Modules\Rating\Models\RatingMorph.
  *
- * @property int $id
- * @property string|null $post_type
- * @property int|null $post_id
- * @property int|null $rating_id
- * @property int|null $value
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property string|null $deleted_by
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property int|null $user_id
- * @property-read \Modules\Rating\Models\Rating|null $rating
+ * @property int                                $id
+ * @property string|null                        $post_type
+ * @property int|null                           $post_id
+ * @property int|null                           $rating_id
+ * @property int|null                           $value
+ * @property string|null                        $created_by
+ * @property string|null                        $updated_by
+ * @property string|null                        $deleted_by
+ * @property \Illuminate\Support\Carbon|null    $created_at
+ * @property \Illuminate\Support\Carbon|null    $updated_at
+ * @property int|null                           $user_id
+ * @property \Modules\Rating\Models\Rating|null $rating
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph query()
@@ -33,6 +34,7 @@ namespace Modules\Rating\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|RatingMorph whereValue($value)
+ *
  * @mixin \Eloquent
  */
 class RatingMorph extends BaseMorphPivot {

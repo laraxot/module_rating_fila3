@@ -7,7 +7,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 class CreateLikesTable extends XotBaseMigration {
     /**
-     * Undocumented function
+     * Undocumented function.
      *
      * @return void
      */
@@ -23,7 +23,7 @@ class CreateLikesTable extends XotBaseMigration {
                 $table->nullableMorphs('likeable');
                 $table->timestamps();
             }
-            );
+        );
 
         // -- UPDATE --
         $this->tableUpdate(

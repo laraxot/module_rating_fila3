@@ -19,8 +19,6 @@ class RatingPanel extends XotBasePanel {
 
     protected static string $title = 'title';
 
-    
-
     /**
      * The relationships that should be eager loaded on index queries.
      *
@@ -37,11 +35,11 @@ class RatingPanel extends XotBasePanel {
 
     /**
      * on select the option label.
-     * 
+     *
      * @param Rating $row
      */
     public function optionLabel($row): string {
-        return (string)$row->title;
+        return (string) $row->title;
     }
 
     /**

@@ -24,7 +24,7 @@ class CreateRatingsTable extends XotBaseMigration {
                 $table->string('deleted_by')->nullable();
                 $table->timestamps();
             }
-            );
+        );
 
         // -- UPDATE --
         $this->tableUpdate(

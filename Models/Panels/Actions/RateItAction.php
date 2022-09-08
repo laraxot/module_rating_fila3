@@ -38,9 +38,9 @@ class RateItAction extends XotBasePanelAction {
         $parz['rating_count'] = $ratings->count('pivot.rating');
         $parz['rating_url'] = $url;
         $parz['title'] = $title;
-        
+
          @phpstan-var view-string
-        
+
         $view = 'blog::actions.rate.btn';
 
         return view($view)->with($parz);
@@ -50,14 +50,14 @@ class RateItAction extends XotBasePanelAction {
     // -- Perform the action on the given models.
 
     public function handle(): Renderable {
-        /** 
-        * @phpstan-var view-string
-        */
+        /**
+         * @phpstan-var view-string
+         */
         $view = 'blog::actions.rate';
 
         return ThemeService::view($view)
             ->with('row', $this->row)
-            ;
+        ;
     }
 
     // end handle

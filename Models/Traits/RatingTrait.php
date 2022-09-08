@@ -87,9 +87,9 @@ trait RatingTrait {
     }
 
     /**
-     * ----
+     * ----.
      */
-    public function getRatingsAvgAttribute(?float $value):?float {
+    public function getRatingsAvgAttribute(?float $value): ?float {
         if (null !== $value) {
             return $value;
         }
