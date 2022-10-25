@@ -53,7 +53,7 @@ trait HasLikes {
          * @var \Modules\Rating\Models\Like
          */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
-        if (null != $where) {
+        if (null !== $where) {
             $where->delete();
         }
 

@@ -52,7 +52,7 @@ class Single extends Component {
         $this->goal = $goal;
         $this->post_type = PanelService::make()->get($model)->postType();
         $id = $model->getKey();
-        if (! is_int($id)) {
+        if (! \is_int($id)) {
             throw new Exception('['.__LINE__.']['.__FILE__.']');
         }
         $this->post_id = $id;

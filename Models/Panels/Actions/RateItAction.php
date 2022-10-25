@@ -21,7 +21,7 @@ class RateItAction extends XotBasePanelAction {
     public bool $onItem = true;
     public string $icon = '<span class="font-white"><i class="fa fa-star"></i> Vota !</span>';
 
-    /*
+    /**
     public function btn(array $params = []): string {
         extract($params);
         if (! isset($row)) {
@@ -45,7 +45,7 @@ class RateItAction extends XotBasePanelAction {
 
         return view($view)->with($parz);
     }
-    */
+     */
 
     // -- Perform the action on the given models.
 

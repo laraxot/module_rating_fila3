@@ -44,7 +44,7 @@ class Multi extends Component {
         $this->model = $model;
         $this->post_type = PanelService::make()->get($model)->postType();
         $id = $model->getKey();
-        if (! is_int($id)) {
+        if (! \is_int($id)) {
             throw new Exception('['.__LINE__.']['.__LINE__.']');
         }
         $this->post_id = $id;
