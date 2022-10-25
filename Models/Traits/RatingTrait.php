@@ -130,10 +130,10 @@ trait RatingTrait {
     // ------ functions ------
 
     /**
-     * @return string
-     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      * @throws \ReflectionException
+     *
+     * @return string
      */
     public function ratingAvgHtml() {
         $ratings = $this->ratings;
