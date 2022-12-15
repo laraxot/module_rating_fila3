@@ -17,4 +17,6 @@ error_log
 
 *.stackdump
 *.cache
+*.log
+*.lock
 
