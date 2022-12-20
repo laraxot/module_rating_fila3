@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null                        $likeable_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Like newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Like newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Like query()
@@ -26,7 +25,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Like whereLikeableType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Like whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Like whereUserId($value)
- *
  * @mixin \Eloquent
  */
 final class Like extends Model {

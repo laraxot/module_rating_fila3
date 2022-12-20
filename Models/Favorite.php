@@ -29,7 +29,6 @@ use Modules\Lang\Models\Post;
  * @property \Illuminate\Database\Eloquent\Model|\Eloquent       $linkable
  * @property \Illuminate\Database\Eloquent\Collection|Favorite[] $myFavorites
  * @property int|null                                            $my_favorites_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite query()
@@ -41,7 +40,6 @@ use Modules\Lang\Models\Post;
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite whereUserId($value)
- *
  * @mixin \Eloquent
  */
 class Favorite extends BaseModel {
