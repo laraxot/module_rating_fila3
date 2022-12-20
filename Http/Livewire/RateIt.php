@@ -7,8 +7,8 @@ namespace Modules\Rating\Http\Livewire;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use Modules\Rating\Models\Favorite as FavoriteModel;
 use Modules\Cms\Services\PanelService;
+use Modules\Rating\Models\Favorite as FavoriteModel;
 
 /**
  * Class RateIt.

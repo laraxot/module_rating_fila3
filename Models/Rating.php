@@ -28,6 +28,7 @@ namespace Modules\Rating\Models;
  * @property \Illuminate\Database\Eloquent\Collection|\Modules\Lang\Models\Post[] $posts
  * @property int|null                                                             $posts_count
  * @property mixed                                                                $url
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Rating        newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rating        newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -40,8 +41,11 @@ namespace Modules\Rating\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Rating        whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rating        whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
+ *
  * @mixin \Eloquent
+ *
  * @property int $id
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereId($value)
  */
 class Rating extends BaseModelLang {

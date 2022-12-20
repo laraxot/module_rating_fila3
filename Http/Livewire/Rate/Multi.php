@@ -7,8 +7,8 @@ namespace Modules\Rating\Http\Livewire\Rate;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use Modules\Rating\Models\Rating;
 use Modules\Cms\Services\PanelService;
+use Modules\Rating\Models\Rating;
 
 /**
  * Class Multi.

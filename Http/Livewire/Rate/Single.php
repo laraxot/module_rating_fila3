@@ -6,8 +6,8 @@ namespace Modules\Rating\Http\Livewire\Rate;
 
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
-use Modules\Rating\Models\RatingMorph;
 use Modules\Cms\Services\PanelService;
+use Modules\Rating\Models\RatingMorph;
 
 /**
  * Class Single.

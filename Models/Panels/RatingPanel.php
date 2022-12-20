@@ -6,8 +6,8 @@ namespace Modules\Rating\Models\Panels;
 
 use Illuminate\Http\Request;
 // --- Services --
-use Modules\Rating\Models\Rating;
 use Modules\Cms\Models\Panels\XotBasePanel;
+use Modules\Rating\Models\Rating;
 
 // ---- bases --
 
