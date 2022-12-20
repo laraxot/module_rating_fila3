@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Http\Livewire\Rate;
 
-use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 use Modules\Rating\Models\RatingMorph;
@@ -53,7 +52,7 @@ class Single extends Component {
         $this->post_type = PanelService::make()->get($model)->postType();
         $id = $model->getKey();
         if (! \is_int($id)) {
-            throw new Exception('['.__LINE__.']['.__FILE__.']');
+            throw new \Exception('['.__LINE__.']['.__FILE__.']');
         }
         $this->post_id = $id;
         $this->user_id = \Auth::id();
