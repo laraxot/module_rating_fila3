@@ -6,7 +6,7 @@ namespace Modules\Rating\Models\Panels\Actions\Favorite;
 
 use Illuminate\Support\Facades\Route;
 // -------- services --------
-use Modules\Xot\Models\Panels\Actions\XotBasePanelAction;
+use Modules\Cms\Models\Panels\Actions\XotBasePanelAction;
 
 // -------- bases -----------
 
