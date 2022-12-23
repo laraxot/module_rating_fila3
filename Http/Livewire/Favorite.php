@@ -57,7 +57,7 @@ class Favorite extends Component {
             $this->fav = true;
         }
 
-        $this->type = $type;
+        $this->type = $type ?? 'default';
         // $this->view = $view;
     }
 
