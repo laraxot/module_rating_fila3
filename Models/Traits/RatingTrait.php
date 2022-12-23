@@ -103,11 +103,8 @@ trait RatingTrait {
     }
 
     /**
-     * @param int $value
-     *
-     * @return int
      */
-    public function getRatingsCountAttribute($value) {
+    public function getRatingsCountAttribute(?int $value):?int {
         if (null !== $value) {
             return $value;
         }
