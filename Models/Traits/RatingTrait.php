@@ -102,9 +102,7 @@ trait RatingTrait {
         return $value;
     }
 
-    /**
-     */
-    public function getRatingsCountAttribute(?int $value):?int {
+    public function getRatingsCountAttribute(?int $value): ?int {
         if (null !== $value) {
             return $value;
         }
