@@ -10,7 +10,7 @@ use Modules\Cms\Models\Panels\Policies\XotBasePanelPolicy;
 /**
  * Class MyRatingPolicy.
  */
-class MyRatingPolicy extends XotBasePolicy {
+class MyRatingPolicy extends XotBasePanelPolicy {
     public function create(UserContract $user, \Illuminate\Database\Eloquent\Model $post): bool {
         return false;
     }
