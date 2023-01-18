@@ -48,7 +48,8 @@ namespace Modules\Rating\Models;
  *
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereId($value)
  */
-class MyRating extends BaseModelLang {
+class MyRating extends BaseModelLang
+{
     /**
      * @var string
      */
