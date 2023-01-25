@@ -10,8 +10,7 @@ use Modules\Cms\Models\Panels\XotBasePanel;
 /**
  * Class MyRatingPanel.
  */
-class MyRatingPanel extends XotBasePanel
-{
+class MyRatingPanel extends XotBasePanel {
     /**
      * The model the resource corresponds to.
      */
@@ -26,8 +25,7 @@ class MyRatingPanel extends XotBasePanel
      * Get the fields displayed by the resource.
         'value'=>'..',
      */
-    public function fields(): array
-    {
+    public function fields(): array {
         return [
             (object) [
                 'type' => 'Id',
@@ -50,8 +48,7 @@ class MyRatingPanel extends XotBasePanel
     /**
      * Get the actions available for the resource.
      */
-    public function actions(): array
-    {
+    public function actions(): array {
         return [];
     }
 
@@ -74,8 +71,7 @@ class MyRatingPanel extends XotBasePanel
     /**
      * @return string
      */
-    public function indexEditSpecialCase()
-    {
+    public function indexEditSpecialCase() {
         return 'LOGGATI PER VOTARE';
     }
 }

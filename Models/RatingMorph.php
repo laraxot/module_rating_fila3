@@ -37,8 +37,7 @@ namespace Modules\Rating\Models;
  *
  * @mixin \Eloquent
  */
-class RatingMorph extends BaseMorphPivot
-{
+class RatingMorph extends BaseMorphPivot {
     /**
      * @var string[]
      */
@@ -52,8 +51,7 @@ class RatingMorph extends BaseMorphPivot
 
     // -------- RELATIONSHIP -----------
 
-    public function rating(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
+    public function rating(): \Illuminate\Database\Eloquent\Relations\HasOne {
         return $this->hasOne(Rating::class); // , 'id', 'rating_id');
     }
 }
