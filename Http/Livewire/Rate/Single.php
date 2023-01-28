@@ -18,8 +18,7 @@ use Modules\Rating\Models\RatingMorph;
 //
 //
 
-class Single extends Component
-{
+class Single extends Component {
     public Model $model;
 
     public Model $goal;
@@ -47,8 +46,7 @@ class Single extends Component
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      * @throws \ReflectionException
      */
-    public function mount(Model $model, Model $goal): void
-    {
+    public function mount(Model $model, Model $goal): void {
         $this->model = $model;
         $this->goal = $goal;
         $this->post_type = PanelService::make()->get($model)->postType();
@@ -70,8 +68,7 @@ class Single extends Component
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function render()
-    {
+    public function render() {
         /**
          * @phpstan-var view-string
          */
@@ -98,8 +95,7 @@ class Single extends Component
         return view($view, $view_params);
     }
 
-    public function update(int $val): void
-    {
+    public function update(int $val): void {
         session()->flash('message', 'Users Created Successfully.['.$val.']');
         $data = [
             'user_id' => $this->user_id,
