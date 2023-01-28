@@ -7,11 +7,13 @@ namespace Modules\Rating\Models\Traits;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Modules\Rating\Models\Like;
 
-trait HasLikes {
+trait HasLikes
+{
     /**
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function likes() {
+    public function likes()
+    {
         return $this->likesRelation;
     }
 
@@ -20,7 +22,8 @@ trait HasLikes {
      *
      * @return void
      */
-    protected static function bootHasLikes() {
+    protected static function bootHasLikes()
+    {
         static::deleting(function ($model) {
             $model->likesRelation()->delete();
 
@@ -35,7 +38,8 @@ trait HasLikes {
      *
      * @return void
      */
-    public function likedBy($user) {
+    public function likedBy($user)
+    {
         $this->likesRelation()->create(['user_id' => $user->id]);
 
         $this->unsetRelation('likesRelation');
@@ -48,7 +52,8 @@ trait HasLikes {
      *
      * @return void
      */
-    public function dislikedBy($user) {
+    public function dislikedBy($user)
+    {
         /**
          * @var \Modules\Rating\Models\Like
          */
@@ -66,7 +71,8 @@ trait HasLikes {
      *
      * @see https://github.com/laravelio/laravel.io/issues/350
      */
-    public function likesRelation(): MorphMany {
+    public function likesRelation(): MorphMany
+    {
         return $this->morphMany(Like::class, 'likesRelation', 'likeable_type', 'likeable_id');
     }
 
@@ -77,7 +83,8 @@ trait HasLikes {
      *
      * @return bool
      */
-    public function isLikedBy($user) {
+    public function isLikedBy($user)
+    {
         return $this->likesRelation()->where('user_id', $user->id)->exists();
     }
 }

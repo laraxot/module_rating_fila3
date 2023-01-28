@@ -13,7 +13,8 @@ use Modules\Rating\Models\Rating;
 /**
  * Class Multi.
  */
-class Multi extends Component {
+class Multi extends Component
+{
     public Model $model;
 
     public int $post_id;
@@ -39,7 +40,8 @@ class Multi extends Component {
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      * @throws \ReflectionException
      */
-    public function mount($model): void {
+    public function mount($model): void
+    {
         $this->model = $model;
         $this->post_type = PanelService::make()->get($model)->postType();
         $id = $model->getKey();
@@ -60,7 +62,8 @@ class Multi extends Component {
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function render() {
+    public function render()
+    {
         /**
          * @phpstan-var view-string
          */
@@ -76,7 +79,8 @@ class Multi extends Component {
         return view($view, $view_params);
     }
 
-    public function cancel(): void {
+    public function cancel(): void
+    {
         // $this->updateMode = false;
         // $this->resetInputFields();
     }
