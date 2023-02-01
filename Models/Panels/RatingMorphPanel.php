@@ -13,7 +13,8 @@ use Modules\Cms\Models\Panels\XotBasePanel;
 /**
  * Class RatingMorphPanel.
  */
-class RatingMorphPanel extends XotBasePanel {
+class RatingMorphPanel extends XotBasePanel
+{
     protected static string $model = 'Modules\Rating\Models\RatingMorph';
 
     protected static string $title = 'title';
@@ -21,7 +22,8 @@ class RatingMorphPanel extends XotBasePanel {
     /**
      * @return object[]
      */
-    public function fields(): array {
+    public function fields(): array
+    {
         // $route_params = optional(\Route::current())->parameters();
         [$containers, $items] = params2ContainerItem();
 
@@ -84,7 +86,8 @@ class RatingMorphPanel extends XotBasePanel {
     /**
      * Get the tabs available.
      */
-    public function tabs(): array {
+    public function tabs(): array
+    {
         $tabs_name = [];
 
         return [];
@@ -93,28 +96,32 @@ class RatingMorphPanel extends XotBasePanel {
     /**
      * Get the cards available for the request.
      */
-    public function cards(Request $request): array {
+    public function cards(Request $request): array
+    {
         return [];
     }
 
     /**
      * Get the filters available for the resource.
      */
-    public function filters(Request $request = null): array {
+    public function filters(Request $request = null): array
+    {
         return [];
     }
 
     /**
      * Get the lenses available for the resource.
      */
-    public function lenses(Request $request): array {
+    public function lenses(Request $request): array
+    {
         return [];
     }
 
     /**
      * Get the actions available for the resource.
      */
-    public function actions(): array {
+    public function actions(): array
+    {
         return [
             new Actions\RateItAction(),
         ];
