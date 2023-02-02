@@ -10,15 +10,13 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /**
  * Class CreateRatingMorphTable.
  */
-class CreateRatingMorphTable extends XotBaseMigration
-{
+class CreateRatingMorphTable extends XotBaseMigration {
     /**
      * db up.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         // ----- create -----
         // -- CREATE --
         $this->tableCreate(

@@ -16,8 +16,7 @@ use Modules\UI\Services\ThemeService;
 /**
  * Class RateItAction.
  */
-class RateItAction extends XotBasePanelAction
-{
+class RateItAction extends XotBasePanelAction {
     public ?string $name = 'rate';
     public bool $onItem = true;
     public string $icon = '<span class="font-white"><i class="fa fa-star"></i> Vota !</span>';
@@ -50,8 +49,7 @@ class RateItAction extends XotBasePanelAction
 
     // -- Perform the action on the given models.
 
-    public function handle(): Renderable
-    {
+    public function handle(): Renderable {
         /**
          * @phpstan-var view-string
          */
@@ -67,8 +65,7 @@ class RateItAction extends XotBasePanelAction
     /**
      * @return mixed
      */
-    public function postHandle()
-    {
+    public function postHandle() {
         // $panel = $this->updateRow(['row' => $this->row]);
         $panel = $this->panel->update(request()->all());
         $swal = [
