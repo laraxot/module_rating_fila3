@@ -15,8 +15,7 @@ use Modules\Xot\Contracts\RowsContract;
 /**
  * Class FavoritePanel.
  */
-class FavoritePanel extends XotBasePanel
-{
+class FavoritePanel extends XotBasePanel {
     /**
      * The model the resource corresponds to.
      */
@@ -25,8 +24,7 @@ class FavoritePanel extends XotBasePanel
     /**
      * index navigation.
      */
-    public function indexNav(): ?Renderable
-    {
+    public function indexNav(): ?Renderable {
         if (! inAdmin()) {
             /**
              * @phpstan-var view-string
@@ -46,8 +44,7 @@ class FavoritePanel extends XotBasePanel
      *
      * @return RowsContract
      */
-    public static function indexQuery(array $data, $query)
-    {
+    public static function indexQuery(array $data, $query) {
         return $query->where('user_id', Auth::id())
             // ->with('linkable')
         ;
@@ -56,8 +53,7 @@ class FavoritePanel extends XotBasePanel
     /**
      * @return string[]
      */
-    public function search(): array
-    {
+    public function search(): array {
         return [
             'linkable.title', 'linkable.txt',
         ];
@@ -87,8 +83,7 @@ class FavoritePanel extends XotBasePanel
     /**
      * @return object[]
      */
-    public function fields(): array
-    {
+    public function fields(): array {
         return [
             (object) [
                 'type' => 'Id',
@@ -116,8 +111,7 @@ class FavoritePanel extends XotBasePanel
     /**
      * Get the actions available for the resource.
      */
-    public function actions(): array
-    {
+    public function actions(): array {
         return [
             new Actions\Favorite\NoMoreFavoriteAction(Auth::id()),
         ];

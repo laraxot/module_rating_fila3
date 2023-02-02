@@ -9,13 +9,11 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /**
  * Class CreateRatingsTable.
  */
-class CreateRatingsTable extends XotBaseMigration
-{
+class CreateRatingsTable extends XotBaseMigration {
     /**
      * db up.
      */
-    public function up(): void
-    {
+    public function up(): void {
         // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
