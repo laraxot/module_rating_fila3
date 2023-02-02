@@ -6,5 +6,6 @@ namespace Modules\Rating\Models\Panels\Policies;
 
 use Modules\Cms\Models\Panels\Policies\XotBasePanelPolicy;
 
-class LikePanelPolicy extends XotBasePanelPolicy {
+class LikePanelPolicy extends XotBasePanelPolicy
+{
 }
