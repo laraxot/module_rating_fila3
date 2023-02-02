@@ -29,7 +29,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @mixin \Eloquent
  */
-final class Like extends Model {
+final class Like extends Model
+{
     use HasFactory;
 
     protected $fillable = ['user_id'];
