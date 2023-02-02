@@ -9,15 +9,13 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /**
  * Class CreateFavoritesTable.
  */
-class CreateFavoritesTable extends XotBaseMigration
-{
+class CreateFavoritesTable extends XotBaseMigration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
