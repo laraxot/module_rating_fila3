@@ -44,7 +44,8 @@ use Modules\Lang\Models\Post;
  *
  * @mixin \Eloquent
  */
-class Favorite extends BaseModel {
+class Favorite extends BaseModel
+{
     /**
      * @var string[]
      */
@@ -53,21 +54,25 @@ class Favorite extends BaseModel {
     /**
      * Relations.
      */
-    public function favorites(): MorphMany {
+    public function favorites(): MorphMany
+    {
         return $this->morphMany(self::class, 'post');
     }
 
-    public function myFavorites(): MorphMany {
+    public function myFavorites(): MorphMany
+    {
         return $this->morphMany(self::class, 'post')
             ->where('user_id', \Auth::id());
     }
 
-    public function isMyFavorited(): bool {
+    public function isMyFavorited(): bool
+    {
         return $this->favorites()
             ->where('user_id', \Auth::id())->count() > 0;
     }
 
-    public function linkable(): MorphTo {
+    public function linkable(): MorphTo
+    {
         // dddx(Favorite::where('post_type','LIKE','%media%')->delete());
 
         return $this->morphTo('post');
