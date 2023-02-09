@@ -54,10 +54,16 @@ class RateItAction extends XotBasePanelAction {
          * @phpstan-var view-string
          */
         $view = 'blog::actions.rate';
-
-        return ThemeService::view($view)
+        /*
+        return ThemeService::v1iew($view)
             ->with('row', $this->row)
         ;
+        */
+        $view_params = [
+            'row' => $this->row,
+        ];
+
+        return view($view, $view_params);
     }
 
     // end handle
