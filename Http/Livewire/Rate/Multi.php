@@ -64,7 +64,7 @@ class Multi extends Component {
         /**
          * @phpstan-var view-string
          */
-        $view = 'blog::livewire.rate.multi';
+        $view = app(GetViewAction::class)->execute();
 
         $goals = Rating::where('related_type', $this->post_type)->get();
 

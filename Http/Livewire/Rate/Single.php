@@ -72,7 +72,7 @@ class Single extends Component {
         /**
          * @phpstan-var view-string
          */
-        $view = 'blog::livewire.rate.single';
+        $view = app(GetViewAction::class)->execute();
 
         $where = [
             'post_type' => $this->post_type,
