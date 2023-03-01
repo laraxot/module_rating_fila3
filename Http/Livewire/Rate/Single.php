@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Http\Livewire\Rate;
 
+use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 use Modules\Cms\Actions\GetViewAction;
 use Modules\Cms\Services\PanelService;
 use Modules\Rating\Models\RatingMorph;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Single.

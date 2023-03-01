@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Http\Livewire\Rate;
 
-use Livewire\Component;
-use Modules\Rating\Models\Rating;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Component;
 use Modules\Cms\Actions\GetViewAction;
 use Modules\Cms\Services\PanelService;
-use Illuminate\Database\Eloquent\Model;
+use Modules\Rating\Models\Rating;
 
 /**
  * Class Multi.
