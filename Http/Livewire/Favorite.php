@@ -7,10 +7,11 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Http\Livewire;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use Modules\Cms\Actions\GetViewAction;
 use Modules\Cms\Services\PanelService;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Models\Favorite as FavoriteModel;
 
 /**
