@@ -16,14 +16,16 @@ use Modules\Lang\Models\Post;
 /**
  * Modules\Rating\Models\Favorite.
  *
- * @property-read \Illuminate\Database\Eloquent\Collection<int, Favorite> $favorites
- * @property-read int|null $favorites_count
- * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $linkable
- * @property-read \Illuminate\Database\Eloquent\Collection<int, Favorite> $myFavorites
- * @property-read int|null $my_favorites_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Favorite> $favorites
+ * @property int|null                                                $favorites_count
+ * @property \Illuminate\Database\Eloquent\Model|\Eloquent           $linkable
+ * @property \Illuminate\Database\Eloquent\Collection<int, Favorite> $myFavorites
+ * @property int|null                                                $my_favorites_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Favorite query()
+ *
  * @mixin \Eloquent
  */
 class Favorite extends BaseModel {
