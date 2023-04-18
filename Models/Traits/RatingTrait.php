@@ -143,7 +143,8 @@ trait RatingTrait {
 
         // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
         // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
-        $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
+        // $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
+        $rating_url = '#';
         // http://geek.local/public_html/it/article/prova-articolo?_act=rate
         /*
         return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
