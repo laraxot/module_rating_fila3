@@ -12,6 +12,7 @@ namespace Modules\Rating\Models;
  * @property int|null                           $post_id
  * @property string|null                        $related_type
  * @property int|null                           $related_id
+ * @property float                              $value
  * @property \Modules\Rating\Models\Rating|null $rating
  * @property string|null                        $created_by
  * @property string|null                        $updated_by
@@ -38,8 +39,7 @@ namespace Modules\Rating\Models;
  *
  * @mixin \Eloquent
  */
-class RatingMorph extends BaseMorphPivot
-{
+class RatingMorph extends BaseMorphPivot {
     /**
      * @var string[]
      */
@@ -53,8 +53,7 @@ class RatingMorph extends BaseMorphPivot
 
     // -------- RELATIONSHIP -----------
 
-    public function rating(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
+    public function rating(): \Illuminate\Database\Eloquent\Relations\HasOne {
         return $this->hasOne(Rating::class); // , 'id', 'rating_id');
     }
 }
