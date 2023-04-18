@@ -26,7 +26,6 @@ namespace Modules\Rating\Models;
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Lang\Models\Post> $posts
  * @property int|null                                                                 $posts_count
  * @property mixed                                                                    $url
- *
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating      newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating      newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -39,7 +38,9 @@ namespace Modules\Rating\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating      whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MyRating      whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
- *
+ * @property int $id
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Lang\Models\Post> $posts
+ * @method static \Illuminate\Database\Eloquent\Builder|MyRating whereId($value)
  * @mixin \Eloquent
  */
 class MyRating extends BaseModelLang
