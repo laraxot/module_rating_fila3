@@ -42,7 +42,8 @@ namespace Modules\Rating\Models;
  *
  * @mixin \Eloquent
  */
-class MyRating extends BaseModelLang {
+class MyRating extends BaseModelLang
+{
     /**
      * @var string
      */

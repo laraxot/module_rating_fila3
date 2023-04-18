@@ -14,7 +14,8 @@ use Modules\Rating\Models\Favorite as FavoriteModel;
 /**
  * Class RateIt.
  */
-class RateIt extends Component {
+class RateIt extends Component
+{
     // public $model;
 
     public int $post_id;
@@ -38,7 +39,8 @@ class RateIt extends Component {
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      * @throws \ReflectionException
      */
-    public function mount(Model $model): void {
+    public function mount(Model $model): void
+    {
         $this->post_type = PanelService::make()->get($model)->postType();
         /**
          * @var int
@@ -69,7 +71,8 @@ class RateIt extends Component {
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function render() {
+    public function render()
+    {
         /*
          * @phpstan-var view-string
          */

@@ -18,18 +18,21 @@ use Modules\Rating\Models\Rating;
 /**
  * Trait RatingTrait.
  */
-trait RatingTrait {
+trait RatingTrait
+{
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function ratings() {
+    public function ratings()
+    {
         return $this->morphRelated(Rating::class);
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ratingObjectives() {
+    public function ratingObjectives()
+    {
         $related = Rating::class;
         $user_id = Auth::id();
 
@@ -55,7 +58,8 @@ trait RatingTrait {
     /**
      * Scope a query to only include popular users.
      */
-    public function scopeWithRating(Builder $query): Builder {
+    public function scopeWithRating(Builder $query): Builder
+    {
         return $query->leftJoin(
             'rating_morph',
             function ($join) {
@@ -67,7 +71,8 @@ trait RatingTrait {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function myRatings() {
+    public function myRatings()
+    {
         return $this->morphRelated(Rating::class)
             ->wherePivot('user_id', Auth::id());
     }
@@ -80,7 +85,8 @@ trait RatingTrait {
      *
      * @return \Illuminate\Support\Collection
      */
-    public function getMyRatingAttribute($value) {
+    public function getMyRatingAttribute($value)
+    {
         $my = $this->myRatings;
 
         return $my->pluck('pivot.rating', 'post_id');
@@ -89,7 +95,8 @@ trait RatingTrait {
     /**
      * ----.
      */
-    public function getRatingsAvgAttribute(?float $value): ?float {
+    public function getRatingsAvgAttribute(?float $value): ?float
+    {
         if (null !== $value) {
             return $value;
         }
@@ -102,7 +109,8 @@ trait RatingTrait {
         return $value;
     }
 
-    public function getRatingsCountAttribute(?int $value): ?int {
+    public function getRatingsCountAttribute(?int $value): ?int
+    {
         if (null !== $value) {
             return $value;
         }
@@ -130,7 +138,8 @@ trait RatingTrait {
      *
      * @return string
      */
-    public function ratingAvgHtml() {
+    public function ratingAvgHtml()
+    {
         $ratings = $this->ratings;
         // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
         // $pivot_avg = $ratings->avg('pivot.rating');
