@@ -1,4 +1,7 @@
 {
+    "name": "privacyfed/module_rating",
+    "description": "Modulo Rating",
+    "license": "MIT",
     "require": {
         "tightenco/jigsaw": "^1.6",
         "tightenco/jigsaw-docs-template": "^1.1",
