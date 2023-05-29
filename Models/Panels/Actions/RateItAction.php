@@ -70,9 +70,6 @@ class RateItAction extends XotBasePanelAction
 
     // end handle
 
-    /**
-     * @return mixed
-     */
     public function postHandle()
     {
         // $panel = $this->updateRow(['row' => $this->row]);

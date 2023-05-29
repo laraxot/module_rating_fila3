@@ -34,7 +34,7 @@ class Single extends Component
     /**
      * @var int|string|null
      */
-    public $user_id = null;
+    public $user_id;
 
     // --------------
 
