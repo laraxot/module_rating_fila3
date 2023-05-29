@@ -13,8 +13,7 @@ use Modules\Cms\Models\Panels\Actions\XotBasePanelAction;
 /**
  * Class NoMoreFavoriteAction.
  */
-class NoMoreFavoriteAction extends XotBasePanelAction
-{
+class NoMoreFavoriteAction extends XotBasePanelAction {
     public bool $onContainer = true;
 
     // public bool $onItem = true; //onlyContainer
@@ -22,37 +21,31 @@ class NoMoreFavoriteAction extends XotBasePanelAction
 
     public string $icon = '<i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i>';
 
-    /**
-     * @var int|string|null
-     */
-    public $user_id;
+    public string $user_id;
 
     /**
      * NoMoreFavoriteAction constructor.
      *
      * @param int|string|null $user_id
      */
-    public function __construct($user_id)
-    {
+    public function __construct(string $user_id) {
         $this->user_id = $user_id;
     }
 
     // -- Perform the action on the given models.
-    public function handle()
-    {
+    public function handle() {
         // dddx($this);
         // return '';
         // dddx($this->row);
         // dddx($this->rows);
     }
 
-    public function postHandle(): string
-    {
+    public function postHandle(): string {
         // $this->rows->where('user_id', $this->user_id);
         // $route_params = Route::current()->parameters();
         [$containers,$items] = params2ContainerItem();
         $func = 'favorites';
-        last($items)->$func()->where('user_id', $this->user_id)->delete();
+        last($items)->{$func}()->where('user_id', $this->user_id)->delete();
 
         return 'fatto';
     }
