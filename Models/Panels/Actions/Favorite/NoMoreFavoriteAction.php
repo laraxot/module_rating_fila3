@@ -29,7 +29,7 @@ class NoMoreFavoriteAction extends XotBasePanelAction
      *
      * @param int|string|null $user_id
      */
-    public function __construct(string $user_id)
+    public function __construct($user_id)
     {
         $this->user_id = $user_id;
     }
