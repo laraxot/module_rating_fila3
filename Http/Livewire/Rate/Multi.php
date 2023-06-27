@@ -87,7 +87,7 @@ class Multi extends Component
     }
 
     // private function resetInputFields(): void {
-        // $this->name = '';
-        // $this->email = '';
+    // $this->name = '';
+    // $this->email = '';
     // }
 }

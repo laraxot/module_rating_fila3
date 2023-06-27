@@ -6,7 +6,6 @@ namespace Modules\Rating\Models;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Modules\Lang\Models\Post;
 
 // ------- services ----
 // ------- traits ---
