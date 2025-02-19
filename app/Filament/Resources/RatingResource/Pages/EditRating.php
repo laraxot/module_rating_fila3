@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Rating\Filament\Resources\RatingResource\Pages;
 
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
 use Modules\Rating\Filament\Resources\RatingResource;
 
 class EditRating extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
